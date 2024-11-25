@@ -1,0 +1,11 @@
+.budget-entry-layout {
+  @apply flex justify-start items-start gap-x-4;
+
+  .sidebar-area {
+    @apply w-1/4;
+  }
+
+  .body-area {
+    @apply w-[55%];
+  }
+}

@@ -1,0 +1,33 @@
+.topbar {
+  @apply relative bg-white shadow-md shadow-[#ededed] h-20;
+
+  .topbar-row {
+    @apply flex justify-between items-center gap-x-3 h-full;
+
+    .app-logo {
+      img {
+        @apply w-[68] h-[48] md:w-[108] md:h-[52];
+      }
+    }
+
+    .nav-items {
+      @apply relative top-[5px] flex justify-center items-center gap-9 lg:gap-14;
+
+      .nav-link {
+        @apply relative flex justify-center items-center gap-x-2 px-1 text-neutral-600 hover:text-neutral-700;
+
+        .nav-icon {
+          @apply text-lg;
+        }
+
+        .nav-text {
+          @apply text-[15px];
+        }
+      }
+
+      .active-link {
+        @apply text-teal-700 font-medium after:absolute after:w-full after:h-0.5 after:bg-teal-600 after:top-12;
+      }
+    }
+  }
+}

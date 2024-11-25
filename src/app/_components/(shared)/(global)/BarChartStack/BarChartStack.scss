@@ -1,0 +1,57 @@
+.bar-chart-container {
+  @apply relative flex items-end h-[260px] w-full px-1;
+
+  .bars-container {
+    @apply relative flex flex-1 items-end h-[240px] w-full border border-green-700;
+    z-index: 1;
+  }
+
+  .bar-group {
+    @apply flex flex-col justify-end items-center flex-1 h-full;
+
+    .bars-wrapper {
+      @apply flex items-end justify-center w-full h-full space-x-2 border-b border-b-grey-300/75;
+
+      .bar {
+        @apply w-8 bg-grey-300/40 transition-all duration-300 ease-in-out hover:cursor-pointer relative;
+
+        &-inflow {
+          @apply border border-green-500/80 bg-green-400/30 hover:bg-green-400/80;
+        }
+
+        &-outflow {
+          @apply border border-red-500/80 bg-red-400/30 hover:bg-red-400/60;
+        }
+
+        .tooltip {
+          @apply absolute bg-gray-700 text-white text-xs py-1 px-2 rounded shadow-lg whitespace-nowrap -translate-y-full z-10;
+        }
+      }
+    }
+
+    .label {
+      @apply relative text-xs text-center mt-2 text-grey-600 after:absolute after:w-[1px] after:h-1.5 after:left-1/2 after:translate-x-1/2 after:bg-grey-300/75 after:-top-2 text-nowrap text-ellipsis;
+    }
+  }
+
+  &:before {
+    content: "";
+    @apply absolute left-0 bottom-0 w-full h-full;
+    background: repeating-linear-gradient(
+      to top,
+      transparent,
+      transparent 24.5%,
+      #e5e7eb 25%,
+      transparent 25.5%,
+      transparent 49.5%,
+      #e5e7eb 50%,
+      transparent 50.5%,
+      transparent 74.5%,
+      #e5e7eb 75%,
+      transparent 75.5%,
+      transparent 99.5%,
+      #e5e7eb 100%
+    );
+    z-index: 0;
+  }
+}

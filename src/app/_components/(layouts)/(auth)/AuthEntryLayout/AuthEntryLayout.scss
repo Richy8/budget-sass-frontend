@@ -1,0 +1,19 @@
+.auth-entry-layout {
+  @apply relative h-full inset-0;
+
+  .content-area {
+    @apply relative flex flex-col justify-start items-center pt-14 sm:pt-12 pb-20 mx-auto w-[55%] xl:w-[60%] lg:w-[75%] md:w-[85%] sm:w-full;
+
+    .brand-logo {
+      @apply relative mx-auto mb-14 sm:mb-10;
+
+      img {
+        @apply w-[124px] xl:w-[116px] lg:w-[108px] h-auto;
+      }
+    }
+
+    .footer-copy {
+      @apply text-grey-600 text-[13px] lg:text-[12.75px] leading-[16px];
+    }
+  }
+}

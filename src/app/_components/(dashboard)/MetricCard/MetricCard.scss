@@ -1,0 +1,33 @@
+.metric-card {
+  @apply w-full bg-white rounded-xl border border-neutral-400/80 overflow-hidden;
+
+  &--top {
+    @apply p-4 pt-[18px] flex justify-between items-start gap-x-4 h-[106px];
+
+    &--left {
+      @apply flex flex-col justify-start items-start gap-y-1;
+
+      &--title {
+        @apply text-neutral-700 text-[13px] md:text-sm mb-0.5;
+      }
+
+      &--value {
+        @apply text-neutral-900 text-[26px] xl:text-[23px] md:text-[26px] font-medium;
+      }
+    }
+
+    &--right {
+      .icon-wrapper {
+        @apply size-[52px] xl:size-[48px] md:size-[52px] min-w-[52px] xl:min-w-[48px] md:min-w-[52px] min-h-[52px] xl:min-h-[48px] md:min-h-[52px] flex justify-center items-center rounded-xl;
+      }
+
+      .icon {
+        @apply text-[28px] xl:text-[26px];
+      }
+    }
+  }
+
+  &--bottom {
+    @apply p-4 bg-neutral-100/75 text-neutral-700 text-[12.75px] xl:text-[12.45px] md:text-[13px];
+  }
+}

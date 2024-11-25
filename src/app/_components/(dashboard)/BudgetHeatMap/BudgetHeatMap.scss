@@ -1,0 +1,47 @@
+.budget-heat-map {
+  @apply w-full rounded-xl border border-neutral-400 p-4 pb-8 bg-white;
+
+  .top-row {
+    @apply flex justify-between items-center mb-8 xl:mb-6 w-full;
+
+    .title-text {
+      @apply text-grey-800 text-base mb-0.5 font-medium;
+    }
+
+    .description-text {
+      @apply text-grey-600/90 text-xs;
+    }
+  }
+
+  .base-row {
+    @apply w-full;
+
+    .selection-top {
+      @apply flex justify-start items-center gap-x-3 mb-10 xl:mb-8;
+    }
+
+    .chart-wrapper {
+      @apply flex justify-between items-center gap-x-3 md:gap-x-5 mx-auto;
+
+      .chart-container {
+        @apply w-[55%];
+      }
+
+      .legends {
+        @apply w-[45%] flex flex-col gap-y-2;
+
+        .legend-item {
+          @apply flex justify-start items-center gap-x-1.5 md:gap-x-2.5;
+
+          &-key {
+            @apply w-8 h-3.5;
+          }
+
+          &-value {
+            @apply text-xs text-grey-700;
+          }
+        }
+      }
+    }
+  }
+}

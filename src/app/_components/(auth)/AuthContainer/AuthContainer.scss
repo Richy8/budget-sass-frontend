@@ -1,0 +1,33 @@
+.form-container {
+  @apply relative h-auto;
+
+  .form-group-wrapper {
+    @apply relative w-[75%] xl:w-[90%] sm:w-[94%] xs:w-[98%] py-[52px] sm:py-[46px] xs:py-[30px] px-[62px] lg:px-[54px] sm:px-[46px] xs:px-[20px] h-auto m-auto rounded-xl border border-neutral-400/65 bg-white shadow-neutral-300/80 shadow-xl;
+
+    .form-top {
+      &--primary {
+        @apply text-blackish-400 text-2xl xs:text-xl font-bold mb-1;
+      }
+
+      &--secondary {
+        @apply text-grey-500 text-sm leading-[22px];
+      }
+    }
+
+    .form-base {
+      @apply relative w-full;
+
+      .base-line {
+        @apply relative w-full mt-7 mb-[30px];
+
+        &--path {
+          @apply absolute top-1/2 left-0 -translate-y-1/2 bg-grey-300/70 w-full h-[1px];
+        }
+
+        &--text {
+          @apply relative text-xs px-2 text-center mx-auto text-grey-500 bg-white w-max;
+        }
+      }
+    }
+  }
+}

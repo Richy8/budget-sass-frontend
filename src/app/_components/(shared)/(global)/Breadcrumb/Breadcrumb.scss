@@ -1,0 +1,33 @@
+.breadcrumb {
+  @apply relative w-full flex justify-start items-center gap-x-1.5 sm:gap-x-1;
+
+  .breadcrumb-item {
+    @apply relative flex justify-start items-center gap-x-2 sm:gap-x-1.5;
+
+    .icon {
+      @apply text-base text-grey-500;
+    }
+
+    .text {
+      @apply text-teal-800 text-[14.5px] sm:text-[13.75px] cursor-pointer hover:text-teal-900;
+    }
+
+    &.inactive-item {
+      .icon {
+        @apply text-grey-500/90;
+      }
+
+      .text {
+        @apply text-grey-500/90 cursor-not-allowed;
+      }
+    }
+  }
+
+  .breadcrumb-line {
+    @apply relative flex justify-start items-center;
+
+    .icon {
+      @apply text-lg text-grey-500;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.dashboard-top-layout {
+  @apply relative h-full min-h-screen inset-0 bg-[#fafafa];
+
+  .top-pane {
+    @apply fixed z-20 w-full top-0;
+  }
+
+  .body-pane {
+    @apply relative pt-32 w-full pb-16;
+  }
+}

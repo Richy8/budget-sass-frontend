@@ -1,0 +1,90 @@
+a,
+.link {
+  @apply text-teal-600 text-[13.75px] transition-all duration-500 ease-out no-underline cursor-pointer hover:text-teal-900 hover:no-underline focus:text-teal-800;
+
+  &:focus {
+    .no-touch & {
+      outline: none;
+    }
+  }
+}
+
+button {
+  @apply w-auto h-auto text-center shadow-[unset] cursor-pointer outline-0 border-0;
+
+  &:focus,
+  &:visited {
+    @apply shadow-[unset] outline-0 border-0;
+  }
+  &:disabled {
+    @apply pointer-events-none cursor-not-allowed select-none;
+  }
+}
+
+.btn {
+  @apply flex text-nowrap justify-center items-center gap-x-[10px] text-base font-normal no-underline bg-transparent shadow-[unset] transition-all duration-300 ease-in-out rounded-lg relative text-center max-w-[100%] cursor-pointer border-0;
+
+  &:hover,
+  &:focus {
+    @apply no-underline shadow-[unset] outline-0;
+
+    .no-touch & {
+      @apply shadow-[unset] outline-0;
+    }
+  }
+
+  .btn--icon {
+    @apply text-lg;
+  }
+
+  .btn--text {
+    @apply relative;
+  }
+}
+
+.btn-sm {
+  @apply py-[9px] px-5 text-sm;
+}
+
+.btn-md {
+  @apply py-2.5 px-8 text-[15.5px];
+}
+
+.btn-lg {
+  @apply py-[14.5px] sm:py-[14px] px-10 text-[15.75px] sm:text-[15.5px];
+}
+
+// ===========================
+// BUTTON COLORS VARIANTS
+// ===========================
+.btn-primary {
+  @apply bg-teal-700 border border-teal-700 text-white;
+
+  &:hover {
+    @apply bg-teal-900 border border-teal-900;
+  }
+
+  &:focus {
+    @apply bg-teal-900 border border-teal-900;
+  }
+
+  &:disabled {
+    @apply bg-teal-700/60 border border-teal-700/60;
+  }
+
+  &-outline {
+    @apply bg-transparent border border-teal-800 text-teal-800;
+
+    &:hover {
+      @apply bg-teal-200;
+    }
+  }
+}
+
+.btn-secondary {
+  @apply bg-grey-50 border border-grey-300/60 text-grey-800;
+
+  &:hover {
+    @apply bg-grey-100/70;
+  }
+}

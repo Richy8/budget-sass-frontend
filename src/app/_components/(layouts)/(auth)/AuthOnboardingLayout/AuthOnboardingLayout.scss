@@ -1,0 +1,7 @@
+.auth-onboarding-layout {
+  @apply relative h-auto inset-0;
+
+  .onboarding-area {
+    @apply relative flex flex-col justify-center items-center py-20 mx-auto w-[55%] xl:w-[60%] lg:w-[75%] md:w-[90%] sm:w-full;
+  }
+}

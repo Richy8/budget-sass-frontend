@@ -1,0 +1,27 @@
+.dashboard-layout {
+  @apply relative h-full min-h-screen inset-0 bg-white;
+
+  .sidebar-pane {
+    @apply fixed top-0 left-0 w-[21%] lg:hidden h-full bg-white p-3 lg:p-0 lg:z-30;
+
+    .sidebar-mobile-overlay {
+      @apply fixed inset-0 h-full w-full;
+    }
+  }
+
+  .show-sidebar {
+    @apply lg:block lg:w-[35%] md:w-1/2 sm:w-[70%];
+  }
+
+  .main-content-pane {
+    @apply relative top-0 left-[21%] lg:left-0 w-[79%] lg:w-full;
+
+    .top-pane {
+      @apply fixed z-10 bg-white w-[79%] lg:w-full top-0 left-[21%] lg:left-0 pr-2 xl:pr-2;
+    }
+
+    .body-pane {
+      @apply relative pt-32 xl:pt-[108px] md:pt-24 pb-3 w-full px-8 xl:px-4 lg:px-6 md:px-2.5 pr-10 xl:pr-[26px] sm:pr-3 mb-8;
+    }
+  }
+}

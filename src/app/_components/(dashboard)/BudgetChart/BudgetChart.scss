@@ -1,0 +1,19 @@
+.budget-chart {
+  @apply w-full rounded-xl border border-neutral-400 p-4 bg-white;
+
+  .top-row {
+    @apply flex justify-between items-center mb-8 w-full;
+
+    .title-text {
+      @apply text-grey-800 text-base mb-0.5 font-medium;
+    }
+
+    .description-text {
+      @apply text-grey-600/90 text-xs;
+    }
+  }
+
+  .base-row {
+    @apply w-full;
+  }
+}

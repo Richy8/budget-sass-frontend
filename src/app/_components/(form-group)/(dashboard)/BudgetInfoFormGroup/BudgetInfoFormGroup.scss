@@ -1,0 +1,48 @@
+.data-group-block {
+  @apply relative border border-grey-300/80 rounded-lg box-border w-full h-auto p-5 pt-6 mb-10;
+
+  .data-group-title {
+    @apply text-sm text-grey-700 font-normal block w-max px-[6px] bg-[#fafafa] absolute left-3.5 -top-2.5;
+    z-index: 9;
+  }
+}
+
+.data-entry-selections {
+  @apply flex flex-col justify-start items-start gap-y-3 w-full;
+
+  .data-selection-item {
+    @apply relative rounded-lg border border-grey-300/80 bg-white w-full py-3.5 px-4 flex justify-between items-center gap-x-4 transition duration-300 ease-in-out cursor-pointer hover:border-teal-600/80;
+
+    .selection-icon {
+      @apply text-lg;
+
+      img {
+        @apply size-5;
+      }
+    }
+
+    .selection-text {
+      @apply text-sm text-grey-700/85;
+    }
+
+    .selected-mark {
+      @apply border border-grey-200/80 size-6 min-w-6 min-h-6 rounded-full flex justify-center items-center bg-grey-100;
+
+      .icon {
+        @apply hidden;
+      }
+    }
+  }
+
+  .is-selected {
+    @apply border-[1.5px] border-teal-600;
+
+    .selected-mark {
+      @apply bg-teal-600;
+
+      .icon {
+        @apply flex text-white font-medium;
+      }
+    }
+  }
+}

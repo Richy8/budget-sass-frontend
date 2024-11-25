@@ -1,0 +1,29 @@
+.entry-block-sidebar {
+  @apply relative top-2 flex flex-col justify-start items-start gap-y-[34px] after:absolute after:w-[1px] after:h-full after:bg-grey-300/85 after:left-2.5;
+
+  .sidebar-item {
+    @apply flex justify-start items-center gap-x-3;
+
+    &-indicator {
+      @apply relative z-10 size-5 min-w-5 min-h-5 border border-grey-300 bg-white rounded-full flex justify-center items-center;
+    }
+
+    &-text {
+      @apply text-sm font-medium text-grey-600;
+    }
+  }
+
+  .sidebar-item-active {
+    .sidebar-item-indicator {
+      @apply bg-green-500 border-0;
+
+      .icon {
+        @apply text-white text-[15px];
+      }
+
+      &-text {
+        @apply text-grey-700;
+      }
+    }
+  }
+}
