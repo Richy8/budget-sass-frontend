@@ -1,11 +1,11 @@
 .metric-row {
-  @apply flex flex-col justify-between items-center mb-7 p-4 rounded-xl border border-neutral-400;
+  @apply flex flex-col justify-between items-center mb-11 rounded-xl;
 
   .selection-top {
     @apply flex justify-between items-center gap-x-4 mb-8 xl:mb-6 w-full;
 
     .title-text {
-      @apply text-grey-800 text-base mb-0.5 font-medium;
+      @apply text-grey-800 text-[17px] mb-0.5 font-medium;
     }
 
     .description-text {

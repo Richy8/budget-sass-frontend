@@ -1,22 +1,55 @@
+"use client";
+
+// import React, { ReactNode, useEffect } from "react";
 import React, { ReactNode } from "react";
-import { Breadcrumb, EntryBlockSidebar } from "@/app/_components";
+import { EntryBlockSidebar } from "@/app/_components";
+import { usePathname } from "next/navigation";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+// import useStore from "@/app/_app-store";
 import "./BudgetEntryLayout.scss";
 
 const BudgetEntryLayout = ({ children }: { children: ReactNode }) => {
-  return (
-    <div className="base-container">
-      {/* TOP ROW */}
-      <div className="flex justify-between items-center gap-x-4 mt-2.5 mb-16">
-        <Breadcrumb itemText="Budget Entry" itemLink="/budget-entry" />
-      </div>
+  const pathname = usePathname();
 
+  // const { budgetEntryPayload } = useStore();
+
+  // useEffect(() => {
+  //   const handleBeforeUnload = () => {
+  //     localStorage.setItem(
+  //       "budget_app_data",
+  //       JSON.stringify({ state: budgetEntryPayload })
+  //     );
+  //   };
+
+  //   window.addEventListener("beforeunload", handleBeforeUnload);
+
+  //   return () => {
+  //     window.removeEventListener("beforeunload", handleBeforeUnload);
+  //   };
+  // }, [budgetEntryPayload]);
+
+  return (
+    <div className="base-container pt-20 pb-10">
       {/* ENTRY BLOCK */}
       <div className="budget-entry-layout">
-        <div className="sidebar-area">
+        <div className="sidebar-area sticky top-28">
           <EntryBlockSidebar />
         </div>
 
-        <div className="body-area">{children}</div>
+        <div className="body-area">
+          {pathname !== "/budget-entry/information" && (
+            <div className="top-nav mb-8">
+              <button
+                className="btn btn-sm btn-primary-outline"
+                onClick={() => window.history.back()}
+              >
+                {" "}
+                <ArrowLeftIcon className="w-4 h-4" /> Back
+              </button>
+            </div>
+          )}
+          {children}
+        </div>
       </div>
     </div>
   );

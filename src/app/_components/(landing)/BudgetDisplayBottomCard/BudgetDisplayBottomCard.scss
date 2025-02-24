@@ -1,0 +1,31 @@
+.budget-display-bottom-card {
+  @apply w-full bg-grey-100/90 rounded-xl p-5 flex flex-wrap justify-start items-start gap-9;
+
+  .budget-item {
+    @apply flex flex-col justify-start items-start gap-2;
+
+    &--title {
+      @apply text-neutral-600/90 text-[13px];
+    }
+
+    &--value {
+      @apply flex justify-start items-center gap-1.5;
+
+      .icon-wrapper {
+        @apply relative size-5 min-w-5 min-h-5 rounded-full overflow-hidden;
+
+        img {
+          @apply absolute w-full h-full object-cover;
+        }
+      }
+
+      .icon {
+        @apply text-lg text-neutral-800/75;
+      }
+
+      .value-text {
+        @apply text-neutral-800/80 font-medium text-[15px] transition duration-300 ease-in-out;
+      }
+    }
+  }
+}

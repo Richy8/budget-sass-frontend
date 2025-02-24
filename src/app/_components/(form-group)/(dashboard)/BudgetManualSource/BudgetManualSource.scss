@@ -1,0 +1,19 @@
+.budget-manual-source {
+  .manual-wrapper {
+    @apply relative mb-12;
+
+    .data-group-block {
+      .category-data-block {
+        @apply relative w-full -mt-2 mb-4 flex flex-col gap-y-5;
+
+        .empty-state {
+          @apply w-full py-4 border border-dashed border-grey-400/70 text-neutral-600/80 text-center text-[14.75px] rounded-xl;
+        }
+
+        .loading-state {
+          @apply w-full py-4 border border-grey-400/30 text-neutral-700/80 text-center text-[14.5px];
+        }
+      }
+    }
+  }
+}

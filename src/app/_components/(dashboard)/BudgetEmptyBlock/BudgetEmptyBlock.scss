@@ -1,0 +1,43 @@
+.budget-empty-block-wrapper {
+  @apply relative flex justify-center w-full mx-auto my-10;
+
+  .budget-empty-grid {
+    @apply w-[85%] my-14 mx-auto columns-3 md:columns-2 sm:columns-1 gap-3.5 sm:gap-3;
+
+    .budget-block {
+      @apply mb-4 break-inside-avoid overflow-hidden rounded-xl;
+    }
+  }
+
+  .block-overlay {
+    @apply absolute flex justify-center items-center inset-0 bg-gradient-to-r from-neutral-50/50 to-white/60 via-neutral-50/50;
+
+    .content-area {
+      @apply flex flex-col justify-center items-center w-1/2 m-auto;
+
+      .image-wrapper {
+        @apply mb-6;
+
+        img {
+          @apply w-[120px] h-[120px];
+        }
+      }
+
+      .primary-text {
+        @apply text-teal-800 text-center text-[24px] sm:text-[26px] xs:text-[24px] font-medium mb-3.5;
+      }
+
+      .secondary-text {
+        @apply text-grey-600 text-center text-base leading-7 sm:text-[13.5px] w-full;
+      }
+
+      .action-area {
+        @apply mx-auto w-full mt-10 flex justify-center items-center;
+
+        .btn {
+          @apply rounded-full w-[190px] py-3;
+        }
+      }
+    }
+  }
+}

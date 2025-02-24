@@ -1,0 +1,11 @@
+.base-layout {
+  @apply relative h-full min-h-screen inset-0 bg-white;
+
+  .top-pane {
+    @apply fixed z-20 w-full top-0;
+  }
+
+  .body-pane {
+    @apply relative w-full;
+  }
+}

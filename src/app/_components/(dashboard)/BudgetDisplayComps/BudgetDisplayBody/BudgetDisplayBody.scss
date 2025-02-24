@@ -1,0 +1,87 @@
+.budget-body {
+  @apply relative border border-neutral-500/75 rounded-xl p-5 flex flex-wrap justify-between items-stretch gap-x-4 w-full overflow-hidden h-auto max-h-[2000px];
+
+  .left-pane {
+    @apply w-[28.5%] rounded-xl h-[inherit] text-[15px] bg-teal-900;
+  }
+
+  .right-pane {
+    @apply w-[70%];
+
+    .top-row {
+      @apply pt-1 mb-12 flex justify-between items-start gap-x-3;
+
+      &--left {
+        @apply flex flex-col justify-start items-start;
+
+        .primary-text {
+          @apply text-[21px] font-medium text-teal-900 mb-2;
+        }
+
+        .secondary-text {
+          @apply text-[15.5px] text-neutral-700;
+        }
+      }
+
+      &--right {
+        @apply flex flex-col justify-center items-end;
+
+        .meta-text {
+          @apply text-[12px] uppercase text-neutral-800/80 mb-1;
+        }
+
+        .primary-text {
+          @apply text-[24px] font-medium text-teal-700;
+        }
+      }
+    }
+
+    .bottom-row {
+      @apply flex flex-col justify-start items-start border border-neutral-500/75 rounded-xl overflow-hidden;
+
+      &--top {
+        @apply w-full flex justify-between items-center gap-x-2.5 px-5 py-6;
+
+        &--left {
+          @apply flex justify-start items-center gap-x-2.5;
+
+          .select-hint-text {
+            @apply text-[15.75px] text-neutral-700;
+          }
+
+          .select-input-block {
+            @apply relative;
+
+            .select-input {
+              @apply relative flex justify-start items-center gap-x-2.5 border-b border-b-neutral-800/50 px-1.5 pb-0.5 cursor-pointer;
+
+              .input-value {
+                @apply text-teal-800 text-base;
+              }
+
+              .input-toggler {
+                @apply text-teal-800 text-lg relative top-[1px] transition duration-300 ease-in-out;
+              }
+            }
+
+            .select-options {
+              @apply absolute left-0 top-8 py-1.5 mt-1 w-max rounded-lg bg-teal-800 overflow-hidden shadow-neutral-800/80 shadow-xl animate-slide-down z-10;
+
+              .option-item {
+                @apply text-white text-[14px] cursor-pointer px-5 py-2.5 transition duration-300 ease-in-out hover:bg-teal-600/40;
+              }
+            }
+          }
+        }
+
+        &--right {
+          @apply flex justify-end items-center gap-x-2.5;
+        }
+      }
+
+      &--base {
+        @apply w-full border-t border-t-neutral-500/75;
+      }
+    }
+  }
+}

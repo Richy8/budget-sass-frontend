@@ -11,17 +11,6 @@ const TopBarAction = () => {
 
   return (
     <div className="topbar-option">
-      {/* SETTINGS */}
-      <div className="item-square notification">
-        <div className="icon icon-cog"></div>
-      </div>
-
-      {/* NOTIFICATION */}
-      <div className="item-square notification">
-        <div className="icon icon-notification"></div>
-        <div className="active-pill"></div>
-      </div>
-
       {/* PROFILE AVATAR */}
       <div className="profile-wrapper relative">
         <div
@@ -29,18 +18,18 @@ const TopBarAction = () => {
           ref={dropdownRef}
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          <div className="item-square profile">
+          <div className="profile-info">
+            <div className="profile-name">Efemena Elvis</div>
+            <div className="profile-role">Project Owner</div>
+          </div>
+
+          <div className="item-circle profile">
             <Image
               src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               width={40}
               height={40}
             />
-          </div>
-
-          <div className="profile-info">
-            <div className="profile-name">Efemena Elvis</div>
-            <div className="profile-role">Admin</div>
           </div>
 
           <div

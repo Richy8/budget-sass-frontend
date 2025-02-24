@@ -3,17 +3,17 @@
   filter: drop-shadow(2px 3px 3px rgba(0, 54, 27, 0.1));
 
   &-content {
-    @apply flex justify-start items-center bg-white;
+    @apply flex justify-start items-center bg-white shadow-2xl;
 
     &--right {
       @apply flex justify-between items-center gap-x-6 h-full py-2.5 pl-5 pr-4 bg-white;
 
       .message-text {
-        @apply capitalize font-medium text-sm mb-0.5 text-red-500;
+        @apply capitalize font-medium text-[15.5px] mb-1.5 text-red-500;
       }
 
       .description-text {
-        @apply text-xs text-black-accent/75;
+        @apply text-[14.5px] text-black-accent/75;
       }
 
       .icon {

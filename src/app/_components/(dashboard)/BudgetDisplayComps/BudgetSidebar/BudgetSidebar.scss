@@ -1,0 +1,84 @@
+.budget-sidebar {
+  @apply relative;
+
+  .sidebar-top {
+    @apply relative border-b border-b-neutral-400/30;
+
+    &--link {
+      @apply relative flex justify-start items-center gap-x-3 text-white/85 px-7 py-8;
+
+      .icon {
+        @apply text-[21px];
+      }
+
+      .text {
+        @apply text-[16.5px] font-normal relative top-[1.25px];
+      }
+    }
+  }
+
+  .sidebar-mid {
+    @apply relative border-b border-b-neutral-400/30 px-7 py-8 flex justify-start items-center gap-x-5;
+    background: darken(#1c4e63, 6%);
+
+    &--left {
+      @apply flex justify-start items-center gap-x-2.5 text-white/85;
+
+      .icon {
+        @apply text-xl;
+      }
+
+      .text {
+        @apply text-[15.5px] font-normal relative top-[1.5px];
+      }
+    }
+
+    &--right {
+      @apply relative;
+
+      .select-input {
+        @apply relative flex justify-start items-center gap-x-2.5 border-b border-b-neutral-400/60 px-1 cursor-pointer;
+
+        .input-value {
+          @apply text-white/65 text-[15px];
+        }
+
+        .input-toggler {
+          @apply text-white/75 text-lg relative -top-[1px] transition duration-300 ease-in-out;
+        }
+      }
+
+      .select-options {
+        @apply absolute left-0 top-8 py-0.5 mt-2 w-full rounded-lg bg-white/90 overflow-hidden shadow-neutral-800/80 shadow-xl animate-slide-down z-10;
+
+        .option-item {
+          @apply text-teal-800 text-[13.75px] cursor-pointer px-3 py-1.5 transition duration-300 ease-in-out hover:bg-neutral-400;
+        }
+      }
+    }
+  }
+
+  .sidebar-bottom {
+    @apply relative px-7 py-9;
+
+    .timeline-row {
+      @apply flex justify-start items-start gap-4 pb-14 relative cursor-pointer before:absolute before:h-full before:border-l before:border-dashed before:border-[1px] before:left-[9px] before:last-of-type:hidden;
+
+      .indicator {
+        @apply size-5 min-w-5 lg:min-w-[23px] min-h-5 lg:min-h-[23px] rounded-full bg-teal-400 border-2 border-white relative z-10;
+      }
+
+      .meta-text {
+        @apply text-[11px] lg:text-xs text-white/65 mb-1.5 uppercase;
+      }
+
+      .primary-text {
+        @apply text-[14.75px] text-white mb-2;
+      }
+
+      .secondary-text {
+        @apply text-[15.5px] font-medium text-white/80;
+      }
+    }
+  }
+}

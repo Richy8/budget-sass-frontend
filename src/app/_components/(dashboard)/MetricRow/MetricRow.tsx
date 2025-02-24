@@ -1,20 +1,20 @@
 import React from "react";
-import { MetricCard, SelectDropdown } from "@/app/_components";
+import { MetricCard } from "@/app/_components";
+// import { MetricCard, SelectDropdown } from "@/app/_components";
 import "./MetricRow.scss";
 
 const MetricRow = () => {
   return (
     <div className="metric-row">
       {/* SELECTION TOP */}
-      <div className="selection-top">
+      {/* <div className="selection-top">
         <div>
-          <div className="title-text">Budget Overview</div>
+          <div className="title-text">Budget Summary</div>
           <div className="description-text">
             Overview of budget data by location
           </div>
         </div>
 
-        {/* SELECTION FILTER */}
         <div className="selection-filter">
           <SelectDropdown
             itemList={[
@@ -36,7 +36,7 @@ const MetricRow = () => {
             activeItem="United States"
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full grid grid-cols-3 md:grid-cols-1 gap-x-5 md:gap-y-5">
         <MetricCard

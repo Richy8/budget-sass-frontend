@@ -49,6 +49,7 @@ export interface ISelectInputField {
   labelId?: string;
   labelTitle?: string;
   inputPlaceholder?: string;
+  inputValue?: string | number;
   isRequired?: boolean;
   isDisabled?: boolean;
   selectData: any[];

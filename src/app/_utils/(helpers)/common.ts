@@ -1,4 +1,5 @@
 // const { EventEmitter } = require("fbemitter");
+import { v4 as uuidv4 } from "uuid";
 
 class serviceUtils {
   timestamp = new Date().getTime();
@@ -17,14 +18,14 @@ class serviceUtils {
     )}; expires=${expires}; path=/`;
   }
 
-  formatNumber(value: number): string {
+  formatNumber(value: number, trailingZeroes: boolean = true): string {
     if (value >= 1_000_000) {
       // Format for 1 million and above
       const millions = value / 1_000_000;
       return millions.toFixed(1) + "M";
     } else if (value >= 1_000) {
       // Format for thousands and append '.00'
-      return value.toLocaleString() + ".00";
+      return `${value.toLocaleString()}${trailingZeroes ? ".00" : ""}`;
     } else {
       // Format for less than 1000 and append '.00'
       return value.toFixed(2);
@@ -74,6 +75,41 @@ class serviceUtils {
   removeStorage(storage_name: string): void {
     if (typeof window === "undefined") return;
     localStorage.removeItem(storage_name);
+  }
+
+  generateUUID(): string {
+    return uuidv4();
+  }
+
+  generateUniqueId(length: number) {
+    const chars =
+      "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+    const array = new Uint8Array(length);
+
+    try {
+      crypto.getRandomValues(array);
+    } catch (error) {
+      console.error(
+        "crypto.getRandomValues failed, using Math.random instead",
+        error
+      );
+      return Array.from(
+        { length },
+        () => chars[Math.floor(Math.random() * chars.length)]
+      ).join("");
+    }
+
+    return Array.from(array, (byte) => chars[byte % chars.length]).join("");
+  }
+
+  encodeString(string: string): string {
+    return btoa(
+      `${this.generateUniqueId(5)}+${string}+${this.generateUniqueId(5)}`
+    );
+  }
+
+  decodeString(encoded_string: string): string {
+    return atob(encoded_string).split("+")[1];
   }
 }
 

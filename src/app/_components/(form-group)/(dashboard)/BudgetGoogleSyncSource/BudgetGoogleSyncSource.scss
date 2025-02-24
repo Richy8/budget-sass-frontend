@@ -1,0 +1,15 @@
+.budget-google-sync-source {
+  .data-entry-selections {
+    .google-auth-card {
+      @apply w-full h-auto flex justify-center items-center gap-x-2.5 border border-grey-300/80 rounded-lg px-5 py-4 mb-1 cursor-pointer transition duration-300 ease-in-out bg-grey-50/60 shadow-lg shadow-grey-200/50 hover:bg-grey-100/50 hover:scale-[98%];
+
+      .google-icon {
+        @apply size-5 min-w-5 min-h-5;
+      }
+
+      .google-auth-card-title {
+        @apply text-sm font-normal text-neutral-700;
+      }
+    }
+  }
+}

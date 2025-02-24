@@ -1,0 +1,29 @@
+.budget-upload-source {
+  .upload-area {
+    @apply mb-9;
+
+    &--empty {
+      @apply border border-dashed border-grey-500/80 rounded-xl h-auto flex flex-col justify-center items-center gap-y-5 py-16 cursor-pointer transition duration-300 ease-in-out hover:border-teal-600/80 hover:bg-grey-50/10 hover:scale-[98%];
+
+      .file-icon {
+        @apply size-9 min-w-9 h-auto;
+      }
+
+      .content-area {
+        @apply flex flex-col justify-center items-center gap-y-1.5;
+
+        .title-text {
+          @apply text-base text-grey-600 font-medium;
+        }
+
+        .subtitle-text {
+          @apply text-[13.5px] text-grey-400 font-normal;
+        }
+
+        .upload-btn {
+          @apply text-grey-600 text-sm border border-grey-600 rounded-lg mt-4 px-7 py-2.5 transition duration-300 ease-in-out hover:bg-teal-700 hover:text-white;
+        }
+      }
+    }
+  }
+}

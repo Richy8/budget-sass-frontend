@@ -21,6 +21,7 @@ const TextInputField = ({
   labelTitle,
   inputType = IInputType.Text,
   inputPlaceholder = "",
+  inputValue = "",
   inputBaseColor = "bg-white",
   isTextArea = false,
   isRequired = false,
@@ -46,7 +47,8 @@ const TextInputField = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const [isHidden, setIsHidden] = useState<boolean>(true);
 
-  const [formValue, setFormValue] = useState<string>("");
+  const [formValue, setFormValue] = useState<string | number>(inputValue);
+
   const [formErrorMsg, setFormErrorMsg] = useState<string>("");
   const [isInputValid, setIsInputValid] = useState<boolean>(true);
 
@@ -251,12 +253,3 @@ const TextInputField = ({
 };
 
 export default TextInputField;
-
-// SUITABLE FOR INPUT FIELDS SUCH AS
-// - Text input
-// - Email input
-// - Search input
-// - Password input
-// - Date input
-// - Time input
-// - Textarea input

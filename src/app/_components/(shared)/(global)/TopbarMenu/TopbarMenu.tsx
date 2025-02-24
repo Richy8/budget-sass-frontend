@@ -40,10 +40,10 @@ const TopbarMenu = () => {
           <div className="text">Settings</div>
         </Link> */}
 
-        <Link href="" className="dropdown-item menu-list-item">
+        {/* <Link href="" className="dropdown-item menu-list-item">
           <div className="icon icon-help"></div>
           <div className="text">Help Center</div>
-        </Link>
+        </Link> */}
 
         <Link href="" className="dropdown-item menu-list-item">
           <div className="icon icon-logout"></div>

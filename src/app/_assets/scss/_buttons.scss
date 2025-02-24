@@ -76,7 +76,7 @@ button {
     @apply bg-transparent border border-teal-800 text-teal-800;
 
     &:hover {
-      @apply bg-teal-200;
+      @apply bg-teal-800 text-white;
     }
   }
 }

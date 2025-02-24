@@ -1,0 +1,39 @@
+.base-topbar {
+  @apply relative bg-white border-b border-b-neutral-400/90 h-auto py-5;
+
+  .topbar-row {
+    @apply flex justify-between items-center gap-x-3 h-full;
+
+    .app-logo {
+      img {
+        @apply w-[68] h-[48] md:w-[108] md:h-[52];
+      }
+    }
+
+    .nav-items {
+      @apply relative top-0.5 flex justify-center items-center gap-x-3.5;
+
+      .nav-link {
+        @apply relative px-4 py-1 text-blackish-800 transition duration-300 ease-in-out hover:text-neutral-700;
+
+        .nav-text {
+          @apply text-[15.5px];
+        }
+      }
+
+      .active-link {
+        @apply text-teal-700 font-medium;
+      }
+    }
+
+    .topbar--right {
+      @apply flex justify-end items-center gap-x-4;
+
+      .nav-options {
+        .btn {
+          @apply h-[50px] hover:text-white text-[15px];
+        }
+      }
+    }
+  }
+}

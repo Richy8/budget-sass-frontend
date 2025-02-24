@@ -1,0 +1,79 @@
+.budget-display-sidebar {
+  @apply relative;
+
+  .sidebar-top {
+    @apply relative flex justify-start items-center gap-x-3 text-neutral-800 px-5 py-6;
+
+    .icon {
+      @apply text-xl;
+    }
+
+    .text {
+      @apply text-[15.75px] font-normal relative top-[1.25px];
+    }
+  }
+
+  .sidebar-mid {
+    @apply relative px-5 py-6 flex justify-start items-center gap-x-4 bg-teal-700;
+
+    &--left {
+      @apply flex justify-start items-center gap-x-2.5 text-white;
+
+      .icon {
+        @apply text-xl;
+      }
+
+      .text {
+        @apply text-[15.25px] font-normal relative top-[1.5px];
+      }
+    }
+
+    &--right {
+      @apply relative;
+
+      .select-input {
+        @apply relative flex justify-start items-center gap-x-2.5 border-b border-b-white/60 px-1 cursor-pointer;
+
+        .input-value {
+          @apply text-white text-[14.75px];
+        }
+
+        .input-toggler {
+          @apply text-white text-lg relative -top-[1px] transition duration-300 ease-in-out;
+        }
+      }
+
+      .select-options {
+        @apply absolute left-0 top-8 py-0.5 mt-2 w-full rounded-lg bg-white overflow-hidden shadow-neutral-800/80 shadow-lg animate-slide-down z-10;
+
+        .option-item {
+          @apply text-teal-800 text-[14px] cursor-pointer px-3.5 py-1.5 transition duration-300 ease-in-out hover:bg-neutral-400/40;
+        }
+      }
+    }
+  }
+
+  .sidebar-bottom {
+    @apply relative px-5 pt-8 pb-7;
+
+    .timeline-row {
+      @apply flex justify-start items-start gap-4 pb-10 relative cursor-pointer before:absolute before:h-full before:border-l before:border-l-teal-500 before:border-dashed before:border-[1px] before:left-[7.5px] before:last-of-type:hidden;
+
+      .indicator {
+        @apply size-4 min-w-4 min-h-4 rounded-full bg-white border-2 border-teal-500 relative z-10;
+      }
+
+      .meta-text {
+        @apply text-xs text-neutral-800/80 mb-1.5 uppercase;
+      }
+
+      .primary-text {
+        @apply text-[14.5px] text-neutral-900 mb-1.5;
+      }
+
+      .secondary-text {
+        @apply text-[15px] font-medium text-neutral-800;
+      }
+    }
+  }
+}

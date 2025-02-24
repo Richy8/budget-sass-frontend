@@ -1,0 +1,55 @@
+.footer {
+  @apply relative bg-teal-800;
+
+  .footer--top {
+    @apply pt-20 pb-14 border-b border-b-white/30;
+
+    .header-text {
+      @apply text-white text-[38px] font-semibold mb-10 w-full;
+    }
+
+    &--left {
+      @apply w-2/5;
+
+      .brand-contact {
+        @apply text-white/75 text-lg leading-7 flex flex-col gap-y-6;
+
+        &-address {
+          @apply w-4/5;
+        }
+      }
+    }
+
+    &--right {
+      @apply w-[44%];
+
+      .title-text {
+        @apply text-white text-[22px] font-semibold mb-4;
+      }
+
+      .description-text {
+        @apply text-white/75 text-[16.5px] leading-[31px] mb-7;
+      }
+
+      .btn {
+        @apply w-[170px] h-[50px];
+      }
+    }
+  }
+
+  .footer--bottom {
+    @apply py-9 flex justify-between items-center;
+
+    &--links {
+      @apply flex justify-start items-center gap-x-5;
+
+      .link-item {
+        @apply text-white/75 text-base transition duration-300 ease-in-out hover:text-white;
+      }
+    }
+
+    .copy-text {
+      @apply text-white/80 text-base text-center;
+    }
+  }
+}

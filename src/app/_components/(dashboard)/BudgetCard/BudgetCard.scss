@@ -1,0 +1,105 @@
+.budget-card {
+  @apply border border-neutral-400 rounded-xl p-4 cursor-pointer transition duration-300 ease-in-out hover:scale-[0.98];
+
+  .top-row {
+    @apply flex justify-between items-center gap-x-3 mb-7;
+
+    .date-item {
+      @apply flex justify-start items-center gap-x-1.5 w-max rounded-full px-4 py-2.5 border border-neutral-300/40 bg-teal-300/15;
+
+      .icon {
+        @apply text-teal-800 relative -top-[0.75px];
+      }
+
+      .date-text {
+        @apply text-xs text-teal-900 font-medium;
+      }
+    }
+
+    .options-item {
+      @apply relative flex justify-center items-center size-9 min-w-9 min-h-9 border border-neutral-300/85 rounded-full cursor-pointer transition duration-300 ease-in-out;
+
+      .icon {
+        @apply text-base text-neutral-800;
+      }
+
+      &:hover {
+        @apply bg-neutral-300/40;
+      }
+
+      .card-options {
+        @apply w-[186px] top-8 right-0 px-1.5 py-2;
+
+        .menu-list {
+          @apply flex flex-col justify-start items-start gap-y-1 w-full;
+
+          .menu-list-item {
+            @apply w-full text-grey-900 px-3.5 py-1.5 cursor-pointer flex justify-start items-center gap-x-2.5 transition duration-100 ease-in-out hover:bg-neutral-300/25;
+
+            .icon {
+              @apply text-base relative -top-[1.5px];
+            }
+
+            .text {
+              @apply text-sm text-neutral-700;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .body-row {
+    @apply mb-9;
+
+    .title-row {
+      @apply flex justify-between items-center gap-x-12 mb-5;
+
+      .title-text {
+        @apply text-teal-900 text-lg font-medium;
+
+        .verified-tag-wrapper {
+          @apply relative -top-[0.5px] pl-0.5 inline-block;
+
+          .verified-tag {
+            @apply flex justify-center items-center size-[17px] min-w-[17px] min-h-[17px] rounded-full bg-teal-500;
+
+            .icon {
+              @apply text-[14px] text-white font-bold;
+            }
+          }
+        }
+      }
+
+      .country-identifier {
+        @apply relative size-10 min-w-10 min-h-10 rounded-full overflow-hidden;
+
+        img {
+          @apply absolute object-cover w-full h-full;
+        }
+      }
+    }
+
+    .body-description {
+      @apply text-neutral-700/85 text-[14.75px] leading-6 mb-5;
+    }
+  }
+
+  .bottom-row {
+    @apply flex justify-between items-center gap-x-4;
+
+    .btn {
+      @apply rounded-xl w-auto h-[50px] text-[14.25px];
+    }
+
+    .btn-primary {
+      @apply w-3/4;
+    }
+
+    .btn-secondary {
+      .icon {
+        @apply text-base text-neutral-900;
+      }
+    }
+  }
+}

@@ -1,10 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { IInputType } from "@/app/_types/form-type";
 import { TextInputField, SelectInputField } from "@/app/_components";
 import Image, { StaticImageData } from "next/image";
+import { useToast } from "@/app/_context/ToastContext";
 import { countries } from "@/app/_utils";
+import useStore from "@/app/_app-store";
+import { useBtnClick } from "@/app/_hooks";
+import { BudgetInformationType } from "@/app/_types/store-type";
 import { ManualEntry, UploadEntry, GoogleSyncEntry } from "@/app/_assets";
 import "./BudgetInfoFormGroup.scss";
 
@@ -15,11 +20,30 @@ type ISelectData = {
 
 type IEntryType = {
   title: string;
+  slug: string;
   imgIcon: StaticImageData | string;
   isSelected: boolean;
 };
 
 const BudgetInfoFormGroup = () => {
+  const router = useRouter();
+  const { showToast } = useToast();
+
+  const [, setProcessing] = useState(false);
+  const { buttonRef, updateButtonState } = useBtnClick("Continue");
+
+  const { getBudgetInformation, updateBudgetInformation, updateBudgetSidebar } =
+    useStore();
+
+  const [budgetInformation, setBudgetInformation] =
+    useState<BudgetInformationType>({
+      title: getBudgetInformation().title ?? "",
+      description: getBudgetInformation().description ?? "",
+      source: getBudgetInformation().source ?? "",
+      country: getBudgetInformation().country ?? "",
+      entryType: getBudgetInformation().entryType ?? "",
+    });
+
   const [countryData] = useState<ISelectData[]>(
     countries.map((country) => ({
       name: country.country,
@@ -29,19 +53,22 @@ const BudgetInfoFormGroup = () => {
 
   const [entryList, setEntryList] = useState<IEntryType[]>([
     {
-      title: "Manual data entry",
+      title: "Manual budget data entry",
+      slug: "manual-entry",
       imgIcon: ManualEntry,
-      isSelected: false,
+      isSelected: budgetInformation.entryType === "manual-entry",
     },
     {
-      title: "Data upload entry",
+      title: "Budget data upload",
+      slug: "upload-entry",
       imgIcon: UploadEntry,
-      isSelected: false,
+      isSelected: budgetInformation.entryType === "upload-entry",
     },
     {
-      title: "Google sync entry",
+      title: "Google sheet sync",
+      slug: "google-entry",
       imgIcon: GoogleSyncEntry,
-      isSelected: false,
+      isSelected: budgetInformation.entryType === "google-entry",
     },
   ]);
 
@@ -50,26 +77,57 @@ const BudgetInfoFormGroup = () => {
       ...entry,
       isSelected: index === itemIndex,
     }));
+
     setEntryList(updatedEntryList);
+
+    const selectedEntry = updatedEntryList.find((entry) => entry.isSelected);
+    if (selectedEntry) updateBudgetPayload(selectedEntry.slug, "entryType");
   };
 
   const updateBudgetPayload = (value: string, field: string) => {
-    // setLoginPayload({ ...loginPayload, [field]: value });
-    console.log(value, field);
+    setBudgetInformation({ ...budgetInformation, [field]: value });
+  };
+
+  const isFormComplete = () => {
+    return Object.values(budgetInformation).every(
+      (field) => field !== "" && field !== null && field !== undefined
+    );
+  };
+
+  const updateButtonClicks = (status: boolean) => {
+    setProcessing(status);
+    updateButtonState(status);
+  };
+
+  const submitBudgetInformation = (e: React.FormEvent) => {
+    e.preventDefault();
+    updateButtonClicks(true);
+
+    if (isFormComplete()) {
+      updateBudgetInformation(budgetInformation);
+
+      // Redirect to budget category page
+      setTimeout(() => {
+        updateBudgetSidebar("/budget-entry/information", "completed", true);
+        router.push("/budget-entry/category");
+      }, 400);
+    } else {
+      showToast("Please fill in all budget information", "error");
+    }
   };
 
   return (
     <div>
-      <form action="">
+      <form onSubmit={submitBudgetInformation}>
         {/* BUDGET TITLE INPUT */}
         <TextInputField
           labelId="budgeTitle"
           labelTitle="Budget title"
           inputType={IInputType.Text}
           inputPlaceholder="Enter the title of your budget"
-          inputBaseColor="bg-[#fafafa]"
+          inputValue={budgetInformation.title}
           isRequired={true}
-          onInputChange={(value) => updateBudgetPayload(value, "budgetTitle")}
+          onInputChange={(value) => updateBudgetPayload(value, "title")}
           errorHandler={{ validator: "validateRequired" }}
         />
 
@@ -79,65 +137,43 @@ const BudgetInfoFormGroup = () => {
           labelTitle="Describe the content of your budget data"
           inputType={IInputType.Text}
           inputPlaceholder="Enter a summary of your budget"
-          inputBaseColor="bg-[#fafafa]"
+          inputValue={budgetInformation.description}
           isRequired={true}
           isTextArea
-          onInputChange={(value) =>
-            updateBudgetPayload(value, "budgetDescription")
-          }
+          onInputChange={(value) => updateBudgetPayload(value, "description")}
           errorHandler={{ validator: "validateRequired" }}
         />
 
         {/* BUDGET SOURCE */}
         <TextInputField
           labelId="budgetSource"
-          labelTitle="What's the source of your budget data"
+          labelTitle="What's the source of your budget data?"
           inputType={IInputType.Text}
           inputPlaceholder="Provide data source URL"
-          inputBaseColor="bg-[#fafafa]"
+          inputValue={budgetInformation.source}
           isRequired={true}
-          onInputChange={(value) => updateBudgetPayload(value, "budgetSource")}
+          onInputChange={(value) => updateBudgetPayload(value, "source")}
           errorHandler={{ validator: "validateRequired" }}
         />
 
         {/* GEOGRAPHICAL DATA */}
-        <div className="data-group-block">
-          <div className="data-group-title">Select geographical data</div>
-
-          <div className="grid grid-cols-2 gap-4 mt-2">
-            <div className="col-span-1">
-              <SelectInputField
-                labelId="country"
-                labelTitle="Country"
-                isRequired={true}
-                inputPlaceholder="Select country"
-                hasBottomPadding={false}
-                selectData={countryData}
-                onSelectChange={(value) =>
-                  updateBudgetPayload(value, "country")
-                }
-              />
-            </div>
-
-            <div className="col-span-1">
-              <SelectInputField
-                labelId="state"
-                labelTitle="State"
-                isRequired={true}
-                inputPlaceholder="Select state"
-                hasBottomPadding={false}
-                selectData={countryData}
-                onSelectChange={(value) => updateBudgetPayload(value, "state")}
-              />
-            </div>
-          </div>
-        </div>
+        <SelectInputField
+          labelId="country"
+          labelTitle="Select budget country"
+          isRequired={true}
+          inputPlaceholder="Select country"
+          inputValue={budgetInformation.country}
+          selectData={countryData}
+          onSelectChange={(value) => updateBudgetPayload(value, "country")}
+        />
 
         {/* DATA ENTRY TYPE */}
         <div className="data-group-block">
-          <div className="data-group-title">Select a data entry type</div>
+          <div className="data-group-title">
+            How are you providing your budget?
+          </div>
 
-          <div className="data-entry-selections mt-2">
+          <div className="data-entry-selections !mt-0.5">
             {entryList.map((entry, index) => (
               <div
                 key={index}
@@ -168,8 +204,13 @@ const BudgetInfoFormGroup = () => {
         </div>
 
         {/* ACTION BUTTON */}
-        <button className="btn btn-lg btn-primary w-full -mt-2">
-          Continue to data source
+        <button
+          ref={buttonRef}
+          className="btn btn-lg btn-primary w-full -mt-2"
+          type="submit"
+          disabled={!isFormComplete()} // Disable button if form is incomplete
+        >
+          Continue
         </button>
       </form>
     </div>

@@ -1,6 +1,6 @@
 import { DashboardTopLayout } from "@/app/_components";
 
-export default function AuthEntryRootLayout({
+export default function DashboardEntryRootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

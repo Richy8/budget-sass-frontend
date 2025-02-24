@@ -9,6 +9,54 @@ export type IAuthType = {
   otp?: any;
 };
 
+export type BudgetSidebarType = {
+  href: string;
+  text: string;
+  isActive: boolean;
+  isCompleted: boolean;
+};
+
+export type YearListType = {
+  yearId: string;
+  year: string;
+  isSelected: boolean;
+};
+
+export type CategoryGroupType = {
+  categoryGroupId: string;
+  categoryTitle: string;
+};
+
+export type BudgetInformationType = {
+  title: string;
+  description: string;
+  source: string;
+  country: string;
+  entryType: string;
+};
+
+export type YearCategoryType = {
+  yearId: string;
+  year: string;
+  amount: number;
+};
+
+export type BudgetDataSourceType = {
+  categoryId: string;
+  title: string;
+  categoryGroupId: string;
+  amountData: YearCategoryType[];
+  parentCategoryAddress: string;
+  children: BudgetDataSourceType[];
+};
+
+export type CategoryDataListType = {
+  categoryGroupId: string;
+  categoryDataId: string;
+  categoryDataTitle: string;
+  categoryDataAddress: string;
+};
+
 export interface IAuthStore {
   authUser: any;
 
@@ -23,9 +71,42 @@ export interface IAuthStore {
   passwordReset: (payload: Pick<IAuthType, "token" | "password">) => any;
 }
 
-export interface IProfileStore {
-  updateProfileRole: (payload: { user_data: string[] }) => any;
-  updateProfileGoal: (payload: { user_data: string[] }) => any;
-  updateProfilePreference: (payload: { user_data: string[] }) => any;
-  updateProfileType: (payload: { user_type: string }) => any;
+export interface IGlobalStore {
+  budgetSidebar: BudgetSidebarType[];
+
+  budgetCategoryLevels: string[];
+
+  budgetEntryPayload: {
+    budgetInformation: BudgetInformationType;
+    budgetCategory: {
+      categoryGroupList: CategoryGroupType[];
+      yearList: YearListType[];
+    };
+    budgetDataSource: BudgetDataSourceType[];
+    categoryDataList: CategoryDataListType[];
+  };
+
+  getBudgetSidebar: () => BudgetSidebarType[];
+  getBudgetInformation: () => BudgetInformationType;
+  getBudgetCategory: () => {
+    categoryGroupList: CategoryGroupType[];
+    yearList: YearListType[];
+  };
+  getBudgetDataSource: () => BudgetDataSourceType[];
+  getBudgetCategoryDataList: () => CategoryDataListType[];
+
+  updateBudgetSidebar: (
+    href: string,
+    status: "completed" | "active",
+    value?: boolean
+  ) => any;
+
+  updateBudgetInformation: (payload: BudgetInformationType) => any;
+  updateBudgetCategory: (payload: {
+    categoryGroupList: CategoryGroupType[];
+    yearList: YearListType[];
+  }) => any;
+
+  updateBudgetDataSource: (payload: BudgetDataSourceType[]) => any;
+  updateBudgetCategoryDataList: (payload: CategoryDataListType[]) => any;
 }

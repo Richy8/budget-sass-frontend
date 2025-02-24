@@ -1,0 +1,52 @@
+.budget-category-accordion {
+  @apply relative z-20 w-full bg-white border border-grey-300/80 rounded-tl-md rounded-tr-md rounded-br-md px-3.5 py-2.5 transition duration-300 ease-in-out hover:border-teal-600/50;
+
+  .top-data-row {
+    @apply relative w-full flex justify-between items-center gap-x-2.5 cursor-pointer;
+
+    &--left {
+      @apply text-sm text-grey-700/80;
+    }
+
+    &--right {
+      @apply cursor-pointer;
+
+      .icon {
+        @apply relative text-xl text-grey-700/65 transition duration-300 ease-in-out;
+      }
+    }
+  }
+
+  .bottom-data-row {
+    @apply pt-5 pb-1 relative w-full animate-slide-down;
+
+    .data-item-row {
+      @apply flex flex-wrap justify-start items-start gap-x-2 gap-y-2.5;
+
+      .data-item-card {
+        @apply relative w-max flex justify-center items-center rounded-xl border border-grey-300/85 overflow-hidden;
+
+        .key,
+        .value {
+          @apply text-[13px] px-3 py-2;
+        }
+
+        .key {
+          @apply border-r border-grey-300/85 text-teal-600/85;
+        }
+
+        .value {
+          @apply font-medium text-grey-700/95;
+        }
+      }
+    }
+
+    .data-item-action {
+      @apply relative mt-6 border-t border-grey-300/85 flex flex-nowrap justify-around items-center;
+
+      .action-item {
+        @apply w-1/2 first-of-type:border-r first-of-type:border-grey-300/85 pt-3 flex justify-center items-center gap-x-2 cursor-pointer text-sm transition duration-300 ease-in-out hover:font-medium;
+      }
+    }
+  }
+}

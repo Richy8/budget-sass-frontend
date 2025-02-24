@@ -1,0 +1,51 @@
+.project-section {
+  @apply w-full h-full pt-36 lg:pt-32 md:pt-28 pb-8 lg:pb-8;
+
+  .project-container {
+    @apply relative;
+
+    .title-row {
+      @apply w-[58%] lg:w-[70%] md:w-[85%] sm:w-[90%] xs:w-full flex flex-col justify-start items-center gap-y-6 sm:gap-y-5 mb-16 mx-auto;
+
+      .title-text {
+        @apply text-[42px] lg:text-[36px] md:text-[32px] xs:text-[28px] font-extrabold text-neutral-900/90 text-center;
+
+        span {
+          @apply bg-gradient-text bg-clip-text text-transparent;
+        }
+      }
+
+      .description-text {
+        @apply text-[17.5px] lg:text-[15px] sm:text-[14.5px] leading-[30px] sm:leading-[26.5px] text-neutral-700/85 text-center;
+      }
+    }
+
+    .body-area {
+      .search-row {
+        @apply flex justify-center items-center gap-x-8 md:gap-x-5 mb-12 w-3/5 lg:w-4/5 md:w-[90%] sm:w-full mx-auto;
+
+        .search-input {
+          @apply relative w-full h-auto;
+
+          .icon {
+            @apply absolute top-1/2 left-7 -translate-y-1/2 text-lg text-teal-700/90 z-10;
+          }
+
+          .form-control {
+            @apply bg-grey-50/75 pl-16 pt-[18.25px] pb-[17px] border-teal-700/50 placeholder:text-neutral-600/70 placeholder:text-[15px];
+          }
+        }
+
+        .search-action {
+          .btn {
+            @apply py-4 md:py-3.5 md:text-[13.5px] bg-teal-100/40 bg-gradient-text border-teal-100/40 text-white hover:bg-teal-700 hover:border-teal-700 hover:text-white transition-all duration-300 ease-in-out;
+          }
+        }
+      }
+
+      .budget-display-area {
+        @apply w-[90%] h-auto mx-auto flex flex-col justify-start items-start gap-y-8;
+      }
+    }
+  }
+}

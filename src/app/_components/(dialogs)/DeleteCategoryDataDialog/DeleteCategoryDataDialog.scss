@@ -1,0 +1,23 @@
+.category-data-header {
+  @apply p-6 border-b border-b-neutral-300;
+
+  .dialog-title-text {
+    @apply text-base pt-0.5 text-grey-900 font-semibold;
+  }
+}
+
+.category-data-body {
+  @apply px-6 pt-6 pb-4 text-neutral-800 text-[15.5px];
+}
+
+.category-data-footer {
+  @apply p-6 pt-5 flex justify-between items-center gap-x-4;
+
+  .btn {
+    @apply w-full py-3 text-[14.75px];
+  }
+
+  .delete-btn {
+    @apply bg-red-500 border border-red-500;
+  }
+}

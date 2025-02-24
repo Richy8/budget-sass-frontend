@@ -1,6 +1,6 @@
 import { AuthOnboardingLayout } from "@/app/_components";
 
-export default function AuthEntryRootLayout({
+export default function AuthOnboardingRootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

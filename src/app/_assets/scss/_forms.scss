@@ -55,7 +55,7 @@ input[type="number"] {
 }
 
 .form-control {
-  @apply border border-grey-300/80 text-sm pb-[13.5px] md:pb-[13px] pt-[16.5px] md:pt-[15px] px-5 md:px-3.5 text-grey-800 transition-all duration-300 ease-in-out rounded-lg box-border align-middle relative shadow-[unset] appearance-none overflow-hidden w-full outline-0 m-0 left-0 top-0 hover:border-teal-600/80 focus:border-teal-400 focus:shadow-[unset] focus:outline-0 disabled:bg-grey-50 disabled:border-grey-100 disabled:text-grey-500 disabled:box-border;
+  @apply border border-grey-300/90 text-sm pb-[13.5px] md:pb-[13px] pt-[16.5px] md:pt-[15px] px-5 md:px-3.5 text-grey-800 transition-all duration-300 ease-in-out rounded-lg box-border align-middle relative shadow-[unset] appearance-none overflow-hidden w-full outline-0 m-0 left-0 top-0 hover:border-teal-600/80 focus:border-teal-400 focus:shadow-[unset] focus:outline-0 disabled:bg-grey-50 disabled:border-grey-100 disabled:text-grey-500 disabled:box-border;
   z-index: 1;
 
   &:not(:placeholder-shown) {

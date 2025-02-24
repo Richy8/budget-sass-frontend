@@ -13,3 +13,13 @@ export { default as SetupFormGroup } from "./(onboarding)/SetupFormGroup/SetupFo
 
 // DASHBOARD FORM GROUPS
 export { default as BudgetInfoFormGroup } from "./(dashboard)/BudgetInfoFormGroup/BudgetInfoFormGroup";
+export { default as BudgetCategoryFormGroup } from "./(dashboard)/BudgetCategoryFormGroup/BudgetCategoryFormGroup";
+
+export { default as BudgetSourceWrapper } from "./(dashboard)/BudgetSourceWrapper/BudgetSourceWrapper";
+
+export { default as BudgetManualSource } from "./(dashboard)/BudgetManualSource/BudgetManualSource";
+export { default as BudgetUploadSource } from "./(dashboard)/BudgetUploadSource/BudgetUploadSource";
+export { default as BudgetGoogleSyncSource } from "./(dashboard)/BudgetGoogleSyncSource/BudgetGoogleSyncSource";
+
+export { default as BudgetCategoryAccordion } from "./(dashboard)/BudgetCategoryAccordion/BudgetCategoryAccordion";
+export { default as BudgetCategoryBlock } from "./(dashboard)/BudgetCategoryBlock/BudgetCategoryBlock";

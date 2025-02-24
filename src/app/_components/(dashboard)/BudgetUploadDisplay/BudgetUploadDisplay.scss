@@ -1,0 +1,71 @@
+.upload-area-display {
+  @apply border border-grey-300/70 rounded-lg h-auto py-4 px-6 mb-10 flex flex-col justify-between gap-y-3;
+
+  .data-row--top {
+    @apply flex justify-between items-center;
+
+    .file-content-area {
+      @apply flex justify-start items-center gap-x-3;
+
+      img {
+        @apply w-12 h-auto -ml-1.5;
+      }
+
+      .title-text {
+        @apply text-grey-800 text-[15px] mb-1 font-medium;
+      }
+
+      .subtitle-area {
+        @apply flex justify-start items-center gap-x-1.5;
+
+        .subtitle-text {
+          @apply text-grey-600/90 text-[13px];
+        }
+
+        .separator {
+          @apply size-[4.5px] min-w-[4.5px] min-h-[4.5px] rounded-full bg-grey-400/80;
+        }
+
+        .status-area {
+          @apply flex justify-start items-center gap-x-1;
+
+          &--text {
+            @apply text-green-600/90 text-[13px] font-medium;
+          }
+        }
+      }
+    }
+
+    .delete-area {
+      @apply size-9 min-w-9 min-h-9 rounded-full flex justify-center items-center border border-grey-200 transition duration-300 ease-in-out;
+
+      .delete-area-icon {
+        @apply size-[18px] min-w-[18px] min-h-[18px] text-grey-600 cursor-pointer transition duration-300 ease-in-out;
+      }
+
+      &:hover {
+        @apply bg-red-100/10 border border-red-200/80;
+
+        .delete-area-icon {
+          @apply text-red-500;
+        }
+      }
+    }
+  }
+
+  .data-row--bottom {
+    @apply flex justify-between items-center gap-x-2.5 transition duration-300 ease-in-out;
+
+    .progress-bar {
+      @apply relative w-full h-1.5 bg-grey-200 rounded-full;
+
+      .progress-state {
+        @apply absolute top-0 left-0 h-full bg-teal-600/80 rounded-full transition duration-300 ease-in-out;
+      }
+    }
+
+    .progress-count {
+      @apply text-grey-600 text-xs;
+    }
+  }
+}

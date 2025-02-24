@@ -1,0 +1,41 @@
+.data-group-block {
+  .data-entry-selections {
+    @apply mt-4;
+
+    .category-list {
+      @apply w-full flex flex-col justify-start gap-y-8 mb-3.5;
+
+      .data-selection-input {
+        @apply relative w-full flex justify-between items-center gap-x-2.5 animate-slide-down;
+
+        .input-area {
+          @apply w-full;
+        }
+
+        .remove-action {
+          @apply size-10 min-w-10 min-h-10 rounded-full border border-grey-300/80 flex justify-center items-center cursor-pointer transition duration-300 ease-in-out hover:bg-red-100/20 hover:border-red-200;
+
+          svg {
+            @apply w-[18px] text-red-400;
+          }
+        }
+      }
+    }
+
+    .action-area {
+      @apply w-full;
+
+      .action-btn {
+        @apply flex justify-center items-center gap-x-2 text-teal-700 w-max cursor-pointer;
+
+        .plus-icon {
+          @apply size-[18px] relative -top-[1px] font-medium;
+        }
+
+        .action-text {
+          @apply text-[15.5px];
+        }
+      }
+    }
+  }
+}

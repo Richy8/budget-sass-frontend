@@ -1,0 +1,23 @@
+.file-sample-area {
+  @apply h-auto flex flex-row justify-between items-center gap-x-5 !mt-1.5;
+
+  .sample-area--left {
+    @apply flex justify-start items-center gap-x-3;
+
+    img {
+      @apply w-9 h-auto;
+    }
+
+    .title-text {
+      @apply text-grey-800 text-[15px] mb-1 font-medium;
+    }
+
+    .subtitle-text {
+      @apply text-grey-600/90 text-[13px];
+    }
+  }
+
+  .sample-area--right {
+    @apply flex justify-end items-center gap-x-5;
+  }
+}

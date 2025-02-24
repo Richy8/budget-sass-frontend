@@ -1,0 +1,93 @@
+.budget-display-card {
+  @apply relative h-auto w-full border border-neutral-500/75 rounded-xl cursor-pointer transition duration-300 ease-in-out hover:border-teal-300/80;
+
+  .content-area {
+    @apply p-6;
+
+    .top-display-area {
+      @apply flex flex-col justify-start items-start gap-y-7;
+
+      .area-top {
+        @apply w-full flex justify-between items-center gap-x-3;
+
+        &--left {
+          @apply flex flex-col gap-y-2.5 w-[68%];
+
+          .title-text {
+            @apply text-neutral-900 font-medium text-lg;
+
+            .status {
+              @apply relative -top-[1.5px] ml-1.5 w-max rounded-full px-2.5 py-1 text-neutral-900 font-medium text-xs leading-[0px] bg-teal-50/40  border border-teal-100/70;
+            }
+          }
+
+          .description-text {
+            @apply text-[15px] leading-6 text-neutral-600/90;
+          }
+        }
+
+        &--right {
+          .info-card {
+            @apply size-14 min-w-14 min-h-14 rounded-xl border border-teal-100/70 bg-teal-50/40 flex flex-col justify-center items-center gap-y-[5px];
+
+            .counter {
+              @apply text-neutral-900 font-medium text-[16.5px] leading-4 text-center;
+            }
+
+            .counter-text {
+              @apply text-neutral-600/90 text-[12.5px] leading-3 text-center;
+            }
+          }
+        }
+      }
+
+      .area-bottom {
+        @apply w-full relative;
+      }
+    }
+
+    .bottom-display-area {
+      @apply relative mt-11 mb-6 rounded-xl animate-soft-drift-up border border-neutral-500/60 hidden justify-between items-stretch overflow-hidden h-auto max-h-[2000px];
+
+      .sidebar-area {
+        @apply w-[27.5%] bg-teal-100/25 h-[inherit];
+      }
+
+      .content-area {
+        @apply w-[72.5%] p-5;
+      }
+    }
+  }
+
+  .action-area {
+    @apply w-full p-1.5 justify-center items-center gap-x-2 bg-teal-100/25 text-neutral-800/75 font-medium cursor-pointer transition duration-500 ease-in-out hover:bg-teal-200/30 hidden animate-soft-drift-up;
+
+    .action-text {
+      @apply text-[13px];
+    }
+
+    .icon {
+      @apply relative text-lg transition duration-300 ease-in-out;
+    }
+  }
+
+  &:hover {
+    .action-area {
+      @apply flex;
+    }
+  }
+}
+
+.budget-display-card--active {
+  @apply border-teal-300/80;
+
+  .content-area {
+    .bottom-display-area {
+      @apply flex;
+    }
+  }
+
+  .action-area {
+    @apply flex;
+  }
+}

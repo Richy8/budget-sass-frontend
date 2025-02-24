@@ -1,9 +1,9 @@
 import { useAuthStore } from "./auth-store";
-import { useProfileStore } from "./profile-store";
+import { useGlobalStore } from "./global-store";
 
 const useStore = () => ({
   ...useAuthStore(),
-  ...useProfileStore(),
+  ...useGlobalStore(),
 });
 
 export default useStore;

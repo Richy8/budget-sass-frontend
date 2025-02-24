@@ -18,6 +18,8 @@ export default function RootLayout({
       <body className={roboto.className}>
         <ClientToastProvider>{children}</ClientToastProvider>
       </body>
+
+      <div id="modal-root-portal"></div>
       {/* <GoogleAnalytics gaId="G-RWXJQ1SDB9" /> */}
     </html>
   );
